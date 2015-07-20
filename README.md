@@ -1,4 +1,4 @@
 # AngularObfuscator
 Java, Swing
 
-![Screenshot 1](readme/screenshot_01.png)
+![Screenshot 1](demo/screenshot_01.png)
