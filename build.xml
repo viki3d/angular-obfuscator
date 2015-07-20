@@ -1,0 +1,58 @@
+<project name="Angular Obfuscator" default="makejar" >
+
+    <property name="src.dir" value="src" />
+    <property name="bld.dir" value="bin" />
+	<property name="jar.dir" value="jar" />
+	<property name="project.name" value="angularobfuscator" />
+	<property name="main-class" value="com.viki3d.${project.name}.Main" />
+
+	<target name="clean">
+		<echo message="=== CLEAN" />		
+		<delete dir="${bld.dir}" />
+		<delete dir="${jar.dir}" />
+	</target>
+
+	<target name="compile" depends="clean">
+		<echo message="=== COMPILE" />
+		<mkdir dir="${bld.dir}" />
+		<javac 
+			srcdir="${src.dir}"
+	        destdir="${bld.dir}" >
+		</javac>
+	</target>
+
+	<target name="makejar" depends="compile">
+		<echo message="=== MAKEJAR" />
+		<delete file="${jar.dir}/${project.name}.jar" ></delete>
+        <jar destfile="${jar.dir}/${project.name}.jar" basedir="${bld.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="${main-class}" />
+            </manifest>
+        </jar>
+	</target>
+
+	<target name="clean_javadoc" >
+		<echo message="${basedir}" />
+		<delete includeemptydirs="true">
+			<fileset dir="doc/javadoc" includes="**/*" />
+		</delete>
+	</target>
+
+	<target name="generate_javadoc" >
+		<javadoc packagenames="com.viki3d.angularobfuscator.*"
+			sourcepath="src"
+			excludepackagenames="com.viki3d.{project.nam}.tests"
+			defaultexcludes="yes"
+			destdir="doc/javadoc"
+			author="true"
+			version="true"
+			use="true"
+			windowtitle="${project.name} API">
+		</javadoc>	
+	</target>
+
+	<target name="unit_tests">
+
+	</target>	
+
+</project>
