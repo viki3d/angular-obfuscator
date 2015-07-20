@@ -1,0 +1,6 @@
+com.viki3d.angularobfuscator
+com.viki3d.angularobfuscator.layer1_data_access
+com.viki3d.angularobfuscator.layer2_logical
+com.viki3d.angularobfuscator.layer3_ui.swing
+com.viki3d.angularobfuscator.layer3_ui.swing.threads.dispatch.listeners
+com.viki3d.angularobfuscator.layer3_ui.swing.threads.init
