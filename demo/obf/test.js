@@ -1,1 +1,0 @@
-var ZEZOQ = angular.module("myApp", []); ZEZOQ.controller("testController", function($scope) { $scope.UEGEYD = 1; $scope.NGB = function() { $scope.UEGEYD++; }; $scope.VUOYROE = function() { if ($scope.UEGEYD>0) { $scope.UEGEYD--; } } });
